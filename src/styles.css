@@ -20,9 +20,21 @@
   width: 100%;
   height: 100%;
   z-index: 2;
+
+  text-align: center;
 }
 .headerTicketForm {
   background-color: white;
+}
+
+.ticketDetails {
+  background-color: white;
+  height: 70%;
+}
+
+.fromToLabel {
+  background-color: gold;
+  height: 10%;
 }
 
 .flag {

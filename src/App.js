@@ -2,20 +2,22 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import AirportSelection from "./components/AirportSelection";
-//import FlightList from "./components/FlightList";
 import FindButton from "./components/FindButton";
 import DatePicker from "./components/DatePicker";
 import Navbar from "./components/Navbar";
 import "./styles.css";
 import FlightTable from "./components/FlightTable";
 import TicketForm from "./components/TicketForm";
+import { useSelector } from "react-redux";
 
 export default function App() {
   const { t } = useTranslation();
+  const ticket_id = useSelector((state) => state.inputs.ticket_id);
 
-  return (
-    <div>
-      <TicketForm />
+  if (ticket_id) {
+    return <TicketForm />;
+  } else {
+    return (
       <div className="App">
         <Navbar />
         <div className="cont w-100">
@@ -38,6 +40,6 @@ export default function App() {
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
