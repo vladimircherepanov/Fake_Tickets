@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { clearTicket } from "../redux/actions";
+import { formatDate } from "../utils/formatDate";
 
 export default () => {
   const dispatch = useDispatch();
@@ -27,9 +28,12 @@ export default () => {
         </h2>
       </div>
       <div className="ticketDetails">
-        <h1>xxxx</h1>
-        <h1>xxxx</h1>
-        <h1>xxxx</h1>
+        <div className="row">
+          <div className="col col-md-1">
+            <h3>Flight {flight.aTimeUTC}</h3>
+          </div>
+          <div className="col col-md-10"> </div>
+        </div>
       </div>
     </div>
   );
